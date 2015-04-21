@@ -12,10 +12,7 @@ var encodeTime;
 var consoleStatus = "";
 var doTheMainfunction =0;
 var htmlversion;
-var syntaxErrorFlag = true;
-var codeFinishFlag = false;
-var returnflag=true;
-var scanf_flag=false;			//
+var syntaxErrorFlag = true,codeFinishFlag = false,returnflag=true,scanf_flag=false;			//
 var syntaxStr ="";				//エラー文の保存用配列
 var scopeLevel = 1;				//変数のスコープの管理用
 function disTexetarea(){
