@@ -4,7 +4,7 @@ var result2 = new Array();
 var jsOfAnimes = new Array();
 var sampleOfAnimes = new Array();
 var lines;
-var rindex;
+var rindex = 0;					//scanf文があった場合の、アニメ実行配列にはさむしおり
 var animeStartIndex=0;
 var scanfname, scanftype;
 var codeOfUser;
@@ -26,7 +26,6 @@ function disTexetarea(){
 		for_flag = true;for_cnt = 0;
 	}
 	encodeTime++;
-	rindex = 0;
 	codeOfUser = document.getElementById('text').value;
 	consoleStatus = document.getElementById("console").value;
 	if(!codeOfUser.match(/return\x20[0-9]/))returnflag=false;
