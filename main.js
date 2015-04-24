@@ -1,3 +1,5 @@
+//グローバル変数をなるべくさける
+//lengthによる配列オブジェクトへのアクセスを無くす。
 var cEditor;
 var result = new Array();
 var result2 = new Array();
@@ -32,10 +34,12 @@ function disTexetarea(){
 	line_reset();
 	result = parser.parse(codeOfUser);
 	var ucode = "";
-	for(var deb = 0;deb < result.length;deb++)ucode += result[deb];
+	var resultlength = result.length;
+	for(var deb = 0;deb < resultlength;deb++)ucode += result[deb];
 	result2 = ucode.split(";");
 	codeArrayList();
-	for(doTheMainfunction =0;doTheMainfunction < result2.length;doTheMainfunction++){
+	var result2rength = result2.length;
+	for(doTheMainfunction =0;doTheMainfunction < result2rength;doTheMainfunction++){
 		console.log(result2[doTheMainfunction]);
 		eval(result2[doTheMainfunction]);
 		if(result2[doTheMainfunction].match(/^scanf_js.*/)){
@@ -126,7 +130,8 @@ if(action_frag == true){
 }
 function evalContexts(cnt){
 	console.log("条件："+for_conditions_array[cnt]+"、変化式："+for_alt_array[cnt]+"、文群："+for_contexts_array[cnt])
-	for(var fi = 0;fi < for_contexts_array.length ;fi++)console.log(fi+"階層の文群："+for_contexts_array[fi]+"の"+cnt+"を実行します。");
+	var forcontextarraylength = for_contexts_array.length;
+	for(var fi = 0;fi < forcontextarraylength;fi++)console.log(fi+"階層の文群："+for_contexts_array[fi]+"の"+cnt+"を実行します。");
 	var context = for_contexts_array[cnt].match(/(.*);$/)[1];
 	var forArray = for_init_array[cnt].split(",");
 	for_flag=true;
